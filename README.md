@@ -4,5 +4,5 @@ Analysis of the Crime in US
 
 Team Members:
 
-Birinder Singh (birinder1469)
+Birinder Singh (birinder1469) <br>
 Sylvia Lee(leeyinying)
