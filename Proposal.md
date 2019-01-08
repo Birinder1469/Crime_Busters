@@ -3,16 +3,14 @@
 
 ## Overview
 
-The US government is working on policy implementation in the United States to keep control over the violent crimes mainly rape, homicides, assault and robbery. The officials are interested
-in looking at how the crime situation has changed over last couple of years. Our App aims to provide the trend of the number of crimes occurred in
-the city of your interest and over the time period selected by the user.
+The US government is working on policy implementation in the United States to keep a control over the violent crimes mainly rape, homicides, assault and robbery. The officials are interested
+in looking at how the crime situation has changed over last couple of years. Our Crime_buster_App aims to provide the trend of the number of crimes occurred in
+the city of interest and over the time period selected by the user.
 
 ## Crime Data in hand
 
-The crime data over the period of 40 years between 1975 and 2015 has been collected by the Marshall project. The most serious crimes namely robbery, rape, assault and homicides from 68
-police jurisdictions has been taken for creating the Crime_buster_App.
-
-
+The crime data over the period of 40 years (1975 and 2015) has been complied by the Marshall project. The most serious crime incidents namely robbery, rape, assault and homicides from 68
+police jurisdictions have been used for creating the Crime_buster_App. The source of the data is [Uniform Crime Reporting program's](https://www.icpsr.umich.edu/icpsrweb/NACJD/series/57) 'Offenses Known and Clearances by Arrest' database for the year in question, held at the National Archives of Criminal Justice Data. The incidents have been recorded per 100,000 residents per jurisdictions where the population data has been collected from FBI's estimated population for that year.
 
 ## Usage scenario & tasks
 
