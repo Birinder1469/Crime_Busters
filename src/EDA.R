@@ -11,13 +11,15 @@ str(crime_data)
 crime_data %>% 
   filter(department_name=='Arlington, Texas')
 
-drop <- c('source','url')
 crime_data %>% 
-  filter(colnames(crime_data) %in% drop)
+  select(-source, -url)
+
+unique(crime_data$department_name)
+unique(crime_data$months_reported)
+crime_data %>% filter(is.na(months_reported))
 
 # removed the source and Url columns which were empty
-crime_data <- crime_data[ , !(names(crime_data) %in% drop)]
-
+crime_data <- crime_data %>% select(-source, -url)
 str(crime_data)
 
 View(crime_data %>% 
