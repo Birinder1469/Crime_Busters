@@ -44,7 +44,9 @@ crime_data[, crime_data$months_reported!=12]
 crime_data <- crime_data %>% 
   filter(months_reported==12)
 
-View(crime_data)
+crime_data <- crime_data %>% 
+  mutate(State=gsub('[0-9]+','', x=ORI))
 
 # Export as Clean Csv file 
 write_csv(crime_data,'..\\data\\ucr_crime_1975_2015_Clean.csv')
+
