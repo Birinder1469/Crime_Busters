@@ -34,14 +34,14 @@ crime_data <- crime_data %>%
 
 #Scale entries with 8 to 11 months reported to estimate crimes in the whole year
 crime_data <- crime_data %>% 
-  mutate(homs_sum = ifelse(months_reported >= 8 & months_reported < 12,
-                              (homs_sum/months_reported)*12, homs_sum),
-         rape_sum = ifelse(months_reported >= 8 & months_reported < 12, 
-                              (rape_sum/months_reported)*12, rape_sum),
-         rob_sum = ifelse(months_reported >= 8 & months_reported < 12, 
-                              (rob_sum/months_reported)*12, rob_sum),
-         agg_ass_sum = ifelse(months_reported >= 8 & months_reported < 12, 
-                              (agg_ass_sum/months_reported)*12, agg_ass_sum),
+  mutate(homs_sum = as.integer(ifelse(months_reported >= 8 & months_reported < 12,
+                              (homs_sum/months_reported)*12, homs_sum)),
+         rape_sum = as.integer(ifelse(months_reported >= 8 & months_reported < 12, 
+                              (rape_sum/months_reported)*12, rape_sum)),
+         rob_sum = as.integer(ifelse(months_reported >= 8 & months_reported < 12, 
+                              (rob_sum/months_reported)*12, rob_sum)),
+         agg_ass_sum = as.integer(ifelse(months_reported >= 8 & months_reported < 12, 
+                              (agg_ass_sum/months_reported)*12, agg_ass_sum)),
          violent_crime = ifelse(months_reported >= 8 & months_reported < 12, 
                               (violent_crime/months_reported)*12,violent_crime),
          homs_per_100k = ifelse(months_reported >= 8 & months_reported < 12, 
@@ -55,9 +55,11 @@ crime_data <- crime_data %>%
          violent_per_100k = ifelse(months_reported >= 8 & months_reported < 12, 
                                    (violent_per_100k/months_reported)*12, violent_per_100k))
 
+View(crime_data %>% filter(months_reported == 8))
+
 crime_data <- crime_data %>% 
   mutate(State=gsub('[0-9]+','', x=ORI))
 
 # Export as Clean Csv file 
-write_csv(crime_data,'..\\data\\ucr_crime_1975_2015_Clean.csv')
+write_csv(crime_data,'..\\data\\ucr_crime_1975_2015_scaled_Clean.csv')
 
