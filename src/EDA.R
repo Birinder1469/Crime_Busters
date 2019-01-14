@@ -8,14 +8,6 @@ crime_data <- read.csv('..\\data\\ucr_crime_1975_2015.csv')
 # removed the source and Url columns which were empty
 crime_data <- crime_data %>% select(-source, -url)
 
-View(crime_data %>% 
-  group_by(year) %>% 
-  summarise(n=n()))
-
-View(crime_data %>% 
-  group_by(department_name) %>% 
-  summarise(n=n()))
-
 #Dropped Department with Na values 
 crime_data <- drop_na(crime_data)
 
@@ -55,11 +47,41 @@ crime_data <- crime_data %>%
          violent_per_100k = ifelse(months_reported >= 8 & months_reported < 12, 
                                    (violent_per_100k/months_reported)*12, violent_per_100k))
 
-View(crime_data %>% filter(months_reported == 8))
-
 crime_data <- crime_data %>% 
   mutate(State=gsub('[0-9]+','', x=ORI))
 
-# Export as Clean Csv file 
-write_csv(crime_data,'..\\data\\ucr_crime_1975_2015_scaled_Clean.csv')
+california <- c('CA')
+texas <- c('TX','TXSPD','TXHPD')
+newyork <- c('NY')
+Ohio <- c('OHCOP','OHCLP','OHCIP')
+arizona <- c('AZ')
+florida <- c('FL')
+colorado <- c('CO','CODPD')
 
+crime_data_Texas <- crime_data %>% 
+    filter(crime_data$State %in% texas) %>% 
+    mutate(US_State='Texas')
+
+crime_data_california <- crime_data %>% 
+  filter(crime_data$State %in% california) %>% 
+  mutate(US_State='California')
+
+crime_data_newyork <- crime_data %>% 
+  filter(crime_data$State %in% newyork) %>% 
+  mutate(US_State='NewYork')
+
+crime_data_arizona <- crime_data %>% 
+  filter(crime_data$State %in% arizona) %>% 
+  mutate(US_State='Arizona')
+
+crime_data_florida <- crime_data %>% 
+  filter(crime_data$State %in% florida) %>% 
+  mutate(US_State='Florida')
+
+crime_data_colorado <- crime_data %>% 
+  filter(crime_data$State %in% colorado) %>% 
+  mutate(US_State='Colorado')
+
+crime_data_states <- rbind(crime_data_Texas,crime_data_newyork,crime_data_florida,crime_data_arizona,crime_data_colorado,crime_data_california)
+
+write.csv(crime_data_states,'..\\data\\ucr_crime_1975_2015_Final_Clean.csv')
