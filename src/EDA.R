@@ -50,3 +50,47 @@ crime_data <- crime_data %>%
 # Export as Clean Csv file 
 write_csv(crime_data,'..\\data\\ucr_crime_1975_2015_Clean.csv')
 
+unique(crime_data$department_name)
+length(unique(crime_data$State))
+
+california <- c('CA')
+texas <- c('TX','TXSPD','TXHPD')
+newyork <- c('NY')
+Ohio <- c('OHCOP','OHCLP','OHCIP')
+arizona <- c('AZ')
+florida <- c('FL')
+colorado <- c('CO','CODPD')
+
+head(crime_data)
+
+crime_data_Texas <- crime_data %>% 
+    filter(crime_data$State %in% texas) %>% 
+    mutate(US_State='Texas')
+
+crime_data_california <- crime_data %>% 
+  filter(crime_data$State %in% california) %>% 
+  mutate(US_State='California')
+
+crime_data_newyork <- crime_data %>% 
+  filter(crime_data$State %in% newyork) %>% 
+  mutate(US_State='NewYork')
+
+crime_data_arizona <- crime_data %>% 
+  filter(crime_data$State %in% arizona) %>% 
+  mutate(US_State='Arizona')
+
+crime_data_florida <- crime_data %>% 
+  filter(crime_data$State %in% florida) %>% 
+  mutate(US_State='Florida')
+
+crime_data_colorado <- crime_data %>% 
+  filter(crime_data$State %in% colorado) %>% 
+  mutate(US_State='Colorado')
+
+crime_data_states <- rbind(crime_data_Texas,crime_data_newyork,crime_data_florida,crime_data_arizona,crime_data_colorado,crime_data_california)
+View(crime_data_states)
+
+write.csv(crime_data_states,'..\\data\\ucr_crime_1975_2015_US_States.csv')
+
+
+
