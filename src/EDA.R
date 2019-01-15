@@ -84,4 +84,29 @@ crime_data_colorado <- crime_data %>%
 
 crime_data_states <- rbind(crime_data_Texas,crime_data_newyork,crime_data_florida,crime_data_arizona,crime_data_colorado,crime_data_california)
 
+# merge crime type into a single variable
+
+crime_total <- crime_data_states %>% 
+  select(-ORI, -months_reported, -State) %>% 
+  select(year, US_State, department_name, homs_sum, rape_sum, rob_sum, agg_ass_sum, violent_crime) %>% 
+  gather('homs_sum','rape_sum','rob_sum','agg_ass_sum', key = "crime_type", value = "counts") %>% 
+    mutate(crime_type = case_when(crime_type == "homs_sum" ~ "homicide",
+                                  crime_type == "rape_sum"~"rape",
+                                  crime_type == "rob_sum"~ "robbery",
+                                  crime_type == "agg_ass_sum"~'aggressive_assault')) %>% 
+    mutate(crime_type = as.factor(crime_type))
+
+crime_100k <- crime_data_states %>% 
+     select(-ORI, -months_reported, -State) %>% 
+     select(year, US_State, department_name, homs_per_100k, rape_per_100k, rob_per_100k, agg_ass_per_100k, violent_per_100k) %>% 
+     gather('homs_per_100k','rape_per_100k','rob_per_100k','agg_ass_per_100k', key = "crime_type", value = "counts_per_100k") %>% 
+     mutate(crime_type = case_when(crime_type == "homs_per_100k" ~ "homicide",
+                                   crime_type == "rape_per_100k"~"rape",
+                                   crime_type == "rob_per_100k"~ "robbery",
+                                   crime_type == "agg_ass_per_100k"~'aggressive_assault')) %>% 
+     mutate(crime_type = as.factor(crime_type)) 
+
+crime_data_states <- full_join(crime_total, crime_100k, by = c("year", "US_State", "department_name", "crime_type")) %>% 
+  select(year, US_State, department_name, total_crime_count = violent_crime, total_crime_per_100k = violent_per_100k, crime_type, counts, counts_per_100k)
+
 write.csv(crime_data_states,'..\\data\\ucr_crime_1975_2015_Final_Clean.csv')
