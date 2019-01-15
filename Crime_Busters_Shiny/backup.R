@@ -2,7 +2,7 @@
 library(shiny)
 suppressPackageStartupMessages(library(tidyverse))
 library(ggplot2)
-crime_data <- read.csv('ucr_crime_1975_2015_US_States.csv',stringsAsFactors = FALSE)
+crime_data <- read.csv('ucr_crime_1975_2015_Final_Clean.csv',stringsAsFactors = FALSE)
 
 # Define UI for application that draws a histogram
 
@@ -28,13 +28,14 @@ if (interactive())
       mainPanel(
         plotOutput("lineplot"),
         tableOutput('State_Crime_Data')
+        uiOutput('SecondSelection')
       )
     )
   )
   
   
   # Define server logic required to draw a histogram
-  server <- function(input, output) {
+  server <- function(input, output, session) {
     
     crime_data_latest <- reactive(
       crime_data %>% 
@@ -45,6 +46,7 @@ if (interactive())
     )
     
     output$State_Crime_Data <- renderTable(crime_data_latest())
+    #  output$SecondSelection <- renderUI({  selectInput('Selected_Department', choices = crime_data[input$Selected_State=='department_name'],'aa' )})
     
   }
   
@@ -53,3 +55,8 @@ if (interactive())
   
 }
 
+
+#checkboxInput(inputId = 'Select_Rape',label = 'Rape',value = FALSE ),
+#checkboxInput(inputId = 'Select_Assault',label = 'Assault',value = FALSE ),
+#checkboxInput(inputId = 'Select_Robbery',label = 'Robbery',value = FALSE ),
+#checkboxInput(inputId = 'Select_Homicide',label = 'Homicide',value = FALSE )
