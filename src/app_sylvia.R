@@ -31,7 +31,7 @@ ui <- fluidPage(
       
       checkboxGroupInput(inputId = "crimeTypeInput",
                          label = "Select Crime Type(s)",
-                         choices = unique(crime_data$crime_type))
+                         choices = unique(crime_data$crime_type),selected = 'rape')
     ),
     
     # Show a plot of the generated distribution
