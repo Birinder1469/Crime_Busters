@@ -9,5 +9,5 @@ For details about the Usage please refer to the Write up document.
 
 For any questions and suggestions please contact the app developers :
 
-Birinder Singh (birinder1469) <br>
-Sylvia Lee(leeyinying)
+Birinder Singh (birinder1469@gmail.com) <br>
+Sylvia Lee (sylvialee19@hotmail.com)
