@@ -3,13 +3,11 @@
 
 ## Rationale
 
-The Crime Buster App is a classic tool not just for police but the citizens of United States who want to get some awareness about the crime situation in their area. Sheriff can plan
-the deployment of his police force based on the number of incidents happened in the past. For some one moving to a new area he/she can look out for the safety situation based on how mainly
-cases of Robbery, Rape, assault and Homicide have been reported in the past.
+The Crime Buster App is a classic tool for anyone who wants insights into the crime situation in particular area in the United States of America, including citizens who are concerned with the safety of their local area or someone moving to a new location. This app is also potentially useful for sheriffs to plan the deployment of their police force based past crimes and incidents. The Crime Buster App helps visualize incidental data of robbery, rape, assault and homicide reported from 1975 to 2014.
 
 ## Description of the App :
 
-The crime data over the period of 40 years (1975 and 2015) has been complied under the Marshall project from the FBI's Uniform Crime Reporting (UCR) Program. The most serious crime incidents namely robbery, rape, assault and homicides from 68
+Crime data over a period of 40 years (1975 and 2015) has been complied under the Marshall project from the FBI's Uniform Crime Reporting (UCR) Program. The most serious crime incidents namely robbery, rape, assault and homicides from 68
 police jurisdictions have been used for creating the Crime_buster_App.
 
 The data under consideration has the following features :
