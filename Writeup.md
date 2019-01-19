@@ -41,7 +41,7 @@ Police to infer what kind of crimes lets say incidents of Robbery have been more
 The app is highly user friendly and easy to use. <br> The Front page looks like the image below and it contains following
 features:
 
-![Usage](/figure/Usage1.png)
+![Usage](/figure/Usage1.PNG)
 
 1. Year Slider (Slider)
 2. State Selector (Drop Down)
@@ -51,33 +51,33 @@ features:
 
 ##### 1. Year Slider
 
-![Year](/figure/Year_Slider.png)
+![Year](/figure/Year_Slider.PNG)
 
 The Year slider can be used to choose from 1975 to 2014 by just sliding the bar. All the
 results will be displayed only for the chosen year range.
 
 ##### 2. State Selector
 
-![State_Selector](/figure/State_Selector_1.png)
+![State_Selector](/figure/State_Selector_1.PNG)
 
 The State selector can be used to choose the state for which we want to see the crime data.
 Users can chose out of the shown 6 states.
 
 ##### 3. Department Selector
 
-![Dep_selector](/figure/Dep_Selector.png)
+![Dep_selector](/figure/Dep_Selector.PNG)
 
 User can chose out of total 30 departments/Jurisdictions and see the crime data for specific department within that state.
 
 #### 4. Count Measurement choice
 
-![](/figure/Count_Measure.png)
+![](/figure/Count_Measure.PNG)
 
 User can choose to see the data for either total number of crimes in the area or crimes per 100,000 residents of the area.
 
 #### 5. Crime Type choice
 
-![](/figure/Crime_type.png)
+![](/figure/Crime_type.PNG)
 
 User can also select out of the 4 crimes for which he/she is interested in looking at the data.
 
@@ -85,14 +85,14 @@ There are two outputs that the user gets after all these selections :
 
 #### Panel 1
 
-![](/figure/Crime_Line_Plot.png)
+![](/figure/Crime_Line_Plot.PNG)
 
 Panel 1 shows the line plot for the selected State, Department and the year of interest. Different
 crimes are shown for each of these years through different colors as shown by the legend.
 
 #### Panel 2
 
-![](/figure/bar_chart.png)
+![](/figure/bar_chart.PNG)
 
 User also gets access to the bar charts showing the proportion of different crimes out of the
 total crime incidents in that jurisdiction.
@@ -101,7 +101,7 @@ but much more Assault and Robberies in this area. Police can take necessary step
 
 #### Table 1
 
-![](/figure/Table.png)
+![](/figure/Table.PNG)
 
 Not just the plots if the user is interested he/she can get the to see the table with the number of incidents in the specific
 jurisdiction for the chosen year.
