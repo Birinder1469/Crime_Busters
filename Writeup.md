@@ -36,10 +36,9 @@ Police to infer what kind of crimes lets say incidents of Robbery have been more
 
 ## Usage of the app :
 
-The app is highly user friendly and easy to use. <br> The Front page looks like the image below and it contains following
-features:
+The app is highly user friendly and easy to use. <br> The Interface looks like the image below and it contains following features:
 
-![Usage](/figure/Usage1.PNG)
+![Usage](/figure/CromeBusters_App.PNG)
 
 1. Year Slider (Slider)
 2. State Selector (Drop Down)
@@ -90,7 +89,7 @@ crimes are shown for each of these years through different colors as shown by th
 
 #### Panel 2
 
-![](/figure/bar_chart.PNG)
+![](/figure/Usage1.PNG)
 
 User also gets access to the bar charts showing the proportion of different crimes out of the
 total crime incidents in that jurisdiction.
@@ -106,8 +105,3 @@ jurisdiction for the chosen year.
 
 We hope that the app will be helpful to the police and citizens in getting information
 about the crime situations around them.
-
-#### Future Scope of work :
-
-We aim to fine tune the features of the app next week. We want to display only the departments
-corresponding to the chosen state in the drop down menu instead of all the departments.
