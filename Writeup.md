@@ -1,6 +1,9 @@
 
 # Milestone 2 - Writeup
 
+Access : The app can be assessed from the following link.
+[Crime Buster App](https://birinder1469.shinyapps.io/Crime_Fighters/)
+
 ## Rationale
 
 The Crime Buster App is a classic tool for anyone who wants insights into regional crime situations in the United States of America. Potential users may include citizens concerned with the safety of their local area or someone moving to a new location. This app is also potentially useful for sheriffs planning the deployment of their police force by providing visual depictions of past crime data.
@@ -10,7 +13,7 @@ users to infer what kind of crimes had been more prominent in their jurisdiction
 
 ## Description of the App and Dataset:
 
-The Crime Buster App creates simple and intuitive time series visualization from data complied under the Marshall project from the FBI's Uniform Crime Reporting (UCR) Program. This dataset includes data of the most serious crime incidents (namely robbery, rape, assault and homicides) from 68 police jurisdictions over a 40-years timespan (1975 to 2014) .
+The Crime Buster App creates simple and intuitive time series visualization from data complied under the Marshall project from the FBI's Uniform Crime Reporting (UCR) Program. This dataset includes data of the most serious crime incidents (namely robbery, rape, assault and homicides) from 30 police jurisdictions over a 40-years timespan (1975 to 2014) .
 
 The data under consideration have the following features :
 
@@ -44,7 +47,7 @@ These were the tasks at hand for Milestone 2
 
 ## Data Extraction :
 
-R Studio was used for data wrangling and any further modification in the app shall be done through the `src` and `app.R` scripts. Departments was combined state-wise for six major States. There were missing entries in the data, but the missing data would not cause any hindrance in the usage of the app. Some departments did not have data recorded from all 12-months in particular years. In such instances, departments with data recorded for more than 9 months was scaled to 12 months, others were dropped to `NA` as it was determined that the data was not representative of the entire year.
+R Studio was used for data wrangling and any further modification in the app shall be done through the `EDA.R` and `app.R` scripts. Departments was combined state-wise for six major States. There were missing entries in the data, but the missing data would not cause any hindrance in the usage of the app. Some departments did not have data recorded from all 12-months in particular years. In such instances, departments with data recorded for more than 9 months was scaled to 12 months, others were dropped to `NA` as it was determined that the data was not representative of the entire year.
 
 ## Usage of the app :
 
