@@ -1,5 +1,8 @@
 # Crime_Busters
 
+Access : The app can be assessed from the following link.
+[Crime Buster App](https://birinder1469.shinyapps.io/Crime_Fighters/)
+
 The Shiny app shows the incidents reported in major jurisdictions in the 6 States of USA.
 
 This how the Interface looks like : <br>
