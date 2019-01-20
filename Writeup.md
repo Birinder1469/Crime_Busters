@@ -47,7 +47,7 @@ These were the tasks at hand for Milestone 2
 
 ## Data Extraction :
 
-R Studio was used for data wrangling and any further modification in the app shall be done through the `EDA.R` and `app.R` scripts. Departments was combined state-wise for six major States. There were missing entries in the data, but the missing data would not cause any hindrance in the usage of the app. Some departments did not have data recorded from all 12-months in particular years. In such instances, departments with data recorded for more than 9 months was scaled to 12 months, others were dropped to `NA` as it was determined that the data was not representative of the entire year.
+R Studio was used for data wrangling and any further modification in the app shall be done through the `EDA.R` and `app.R` scripts. Departments were combined state-wise for six major States. There were missing entries in the data, but the missing data would not cause any hindrance in the usage of the app. Some departments did not have data recorded from all 12-months in particular years. In such instances, departments with data recorded for more than 9 months was scaled to 12 months, others were dropped to `NA` as it was determined that the data was not representative of the entire year.
 
 ## Usage of the app :
 
@@ -118,6 +118,6 @@ If the users are interested to see exact numbers, the summarization table shows 
 
 ## Vision and Next Steps
 
-In the future, the development of the Crime Buster app is to be able to include more states and jurisdictions in the selection. A feature that might be useful to implement is the 'hover' feature that allows users to see the data represented at each point on the plots. Additionally, a toggle can be implemented to collapse the selection panel and allow users to maximize their screen space to explore data in the plots.
+So far the app has the functionalities proposed earlier. In the future, the development of the Crime Buster app is to be able to include more states and jurisdictions in the selection. A feature that might be useful to implement is the 'hover' feature that allows users to see the data represented at each point on the plots. Additionally, a toggle can be implemented to collapse the selection panel and allow users to maximize their screen space to explore data in the plots.
 
 We hope that the app will be helpful to the police and citizens in getting information about the crime situations around them.
