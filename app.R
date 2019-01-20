@@ -37,9 +37,7 @@ ui <- fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       plotOutput("graphs"),
-      tableOutput('State_Crime_Data'),
-      tableOutput('State_Crime_Data_New'),
-      textOutput('value')
+      tableOutput('State_Crime_Data')
       
     )
   )
