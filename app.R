@@ -32,7 +32,7 @@ ui <- fluidPage(
       
       checkboxGroupInput(inputId = "crimeTypeInput",
                          label = "Select Crime Type(s)",
-                         choiceNames = c("Aggressive Assault", 'Homicide', 'Rape', 'Robbery'),
+                         choiceNames = c("Assault", 'Homicide', 'Rape', 'Robbery'),
                          choiceValues = sort(unique(crime_data$crime_type)),
                          selected = sort(unique(crime_data$crime_type)))),
     
@@ -75,7 +75,12 @@ server <- function(input, output) {
                         counts = 'counts_per_100k'))
         
       } %>% 
-      mutate(count_ratio=counts/total_crime_count))
+      mutate(count_ratio=counts/total_crime_count) %>% 
+      mutate(crime_type = case_when(crime_type == "aggressive_assault" ~ "Assault",
+                                    crime_type == "homicide" ~ "Homicide",
+                                    crime_type == "rape" ~ "Rape",
+                                    crime_type == "robbery" ~ "Robbery")))
+  
   
   occurance_lineplot <- reactive({
     crime_data_selected () %>% 
@@ -96,8 +101,8 @@ server <- function(input, output) {
       geom_bar(stat = 'identity')+
       labs(x = "Year",
            y = "Proportion Of Crimes",
-           title = "Proportion of crimes")+
-      #scale_fill_brewer(palette = "Set3")+
+           title = "Proportion of crimes",
+           fill = "Crime Type")+
       theme_minimal()+
       theme(axis.text.x = element_text(angle = 70, vjust = 0.5),
             legend.position = "bottom",plot.title = element_text(size=20))
