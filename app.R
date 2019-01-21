@@ -76,10 +76,10 @@ server <- function(input, output) {
       geom_point()+
       labs(x = "Year",
            y = "#Crimes",
-           title = "Number of crimes overtime")+
+           title = "Number of crimes")+
       #scale_color_brewer(palette = "Set3")+
       theme_minimal()+
-      theme(legend.position = "none")
+      theme(legend.position = "none",plot.title = element_text(size=20))
   })
   
   ratio_plot <- reactive({
@@ -88,11 +88,11 @@ server <- function(input, output) {
       geom_bar(stat = 'identity')+
       labs(x = "Year",
            y = "Proportion Of Crimes",
-           title = "Proportion of differ types of crime")+
+           title = "Proportion of crimes")+
       #scale_fill_brewer(palette = "Set3")+
       theme_minimal()+
       theme(axis.text.x = element_text(angle = 70, vjust = 0.5),
-            legend.position = "bottom")
+            legend.position = "bottom",plot.title = element_text(size=20))
   })
   
   summary_table <- reactive({
