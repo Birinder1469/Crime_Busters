@@ -4,6 +4,8 @@ suppressPackageStartupMessages(library(tidyverse))
 library(ggplot2)
 library(RColorBrewer)
 library(gridExtra)
+library(forcats)
+library(shinyhelper)
 
 # Load Data
 crime_data <- read.csv('data//ucr_crime_1975_2015_Final_Clean.csv',stringsAsFactors = FALSE)
@@ -32,7 +34,10 @@ ui <- fluidPage(
                          label = "Select Crime Type(s)",
                          choiceNames = c("Assault", 'Homicide', 'Rape', 'Robbery'),
                          choiceValues = sort(unique(crime_data$crime_type)),
-                         selected = sort(unique(crime_data$crime_type)))),
+                         selected = unique(crime_data$crime_type)[1])),
+    
+    
+    
     
     # Show a plot of the generated distribution
     mainPanel(
@@ -46,6 +51,9 @@ ui <- fluidPage(
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
+  
+  
+  observe_helpers()
   
   crime_data_selected <- reactive(
     crime_data %>% 
