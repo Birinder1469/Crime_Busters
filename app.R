@@ -34,7 +34,7 @@ ui <- fluidPage(
                          label = "Select Crime Type(s)",
                          choiceNames = c("Assault", 'Homicide', 'Rape', 'Robbery'),
                          choiceValues = sort(unique(crime_data$crime_type)),
-                         selected = sort(unique(crime_data$crime_type)))),
+                         selected = unique(crime_data$crime_type)[1])),
     
     
     
