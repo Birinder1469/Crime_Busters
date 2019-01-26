@@ -82,7 +82,7 @@ server <- function(input, output) {
                                     crime_type == "robbery" ~ "Robbery")) %>%
       mutate(crime_type = fct_reorder(crime_type, counts, .desc = TRUE)))
 
-  color_map = c("Assault" = "#F8766D", "Homicide" = "#7CAE00", "Rape" = "#00BFC4", "Robbery" = "#C77CFF")
+  color_map = c("Homicide" = "#F8766D", "Rape" = "#7CAE00", "Assault" = "#00BFC4", "Robbery" = "#C77CFF")
 
   # Create plots
   occurance_lineplot <- reactive({
