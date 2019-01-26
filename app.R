@@ -4,6 +4,7 @@ suppressPackageStartupMessages(library(tidyverse))
 library(ggplot2)
 library(RColorBrewer)
 library(gridExtra)
+library(forcats)
 
 # Load Data
 crime_data <- read.csv('data//ucr_crime_1975_2015_Final_Clean.csv',stringsAsFactors = FALSE)
@@ -13,6 +14,7 @@ crime_data <- read.csv('data//ucr_crime_1975_2015_Final_Clean.csv',stringsAsFact
 ui <- fluidPage(
   # Application title
   titlePanel("CrimeBusters"),
+  tags$p("Simple filtering application focusing on USA crime statistics in local regions"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -37,16 +39,16 @@ ui <- fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       plotOutput("graphs"),
-      tableOutput('State_Crime_Data')
-      
-    )
+      tableOutput('State_Crime_Data'))
+    
   )
 )
 
 
-# Define server logic required to draw a histogram
+# Define server logic 
 server <- function(input, output) {
   
+  # Reactive data selection
   crime_data_selected <- reactive(
     crime_data %>% 
       filter(US_State==input$Selected_State) %>% 
@@ -71,21 +73,25 @@ server <- function(input, output) {
       mutate(crime_type = case_when(crime_type == "aggressive_assault" ~ "Assault",
                                     crime_type == "homicide" ~ "Homicide",
                                     crime_type == "rape" ~ "Rape",
-                                    crime_type == "robbery" ~ "Robbery")))
+                                    crime_type == "robbery" ~ "Robbery")) %>% 
+      mutate(crime_type = fct_reorder(crime_type, counts, .desc = TRUE)))
   
+  color_map = c("Assault" = "#F8766D", "Homicide" = "#7CAE00", "Rape" = "#00BFC4", "Robbery" = "#C77CFF")
   
+  # Create plots
   occurance_lineplot <- reactive({
     crime_data_selected () %>% 
       ggplot(aes(year,counts, group = interaction(department_name, crime_type), color = crime_type))+
-      geom_line()+
-      geom_point()+
+      geom_line(size = 1.25)+
+      geom_point(size = 2)+
       labs(x = "Year",
            y = "#Crimes",
            title = "Number of crimes")+
-      #scale_color_brewer(palette = "Set3")+
+      scale_color_manual(values = color_map)+
       theme_minimal()+
       theme(legend.position = "none",plot.title = element_text(size=20))
   })
+  
   
   ratio_plot <- reactive({
     crime_data_selected () %>% 
@@ -95,11 +101,13 @@ server <- function(input, output) {
            y = "Proportion Of Crimes",
            title = "Proportion of crimes",
            fill = "Crime Type")+
+      scale_fill_manual(values = color_map)+
       theme_minimal()+
       theme(axis.text.x = element_text(angle = 70, vjust = 0.5),
-            legend.position = "bottom",plot.title = element_text(size=20))
+            legend.position = "bottom", plot.title = element_text(size=20))
   })
   
+  # Calculate summary stats
   summary_table <- reactive({
     crime_data_selected() %>% 
       filter(year == max(year) | year == min(year)) %>% 
@@ -118,6 +126,7 @@ server <- function(input, output) {
              "Average percent annual change (%)" = avg_annual_perc_diff)
   })
   
+  # Output componenets
   output$state <- renderUI(
     selectInput(inputId = 'Selected_State',
                 label = 'Select the US State',
@@ -126,14 +135,13 @@ server <- function(input, output) {
   output$department <- renderUI(
     if (is.null(input$Selected_State) || input$Selected_State == ""){return()}
     else selectInput(inputId = 'Selected_Department',
-                     label = 'Select the Department',
+                     label = 'Select Police Department',
                      choices = unique(c(crime_data$department_name[which(crime_data$US_State == input$Selected_State)])))
   )
   
   output$graphs <- renderPlot(grid.arrange(occurance_lineplot(), ratio_plot(), ncol = 2))
   
   output$State_Crime_Data <- renderTable(summary_table())
-  #output$State_Crime_Data_New <- renderTable(crime_data_ratio())
   
 }
 
