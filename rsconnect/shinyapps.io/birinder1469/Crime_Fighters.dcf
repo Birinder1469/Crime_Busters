@@ -5,9 +5,9 @@ account: birinder1469
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 655912
-bundleId: 1824535
+bundleId: 1838760
 url: https://birinder1469.shinyapps.io/Crime_Fighters/
-when: 1547933857.13805
+when: 1548531003.84145
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: CODE_OF_CONDUCT.md|Proposal.md|README.md|Writeup.md|src/.Rhistory|src/app.R|src/EDA.R|figure
+ignoredFiles: CODE_OF_CONDUCT.md|Feedback_Reflection.md|Proposal.md|README.md|Writeup.md|src/.Rhistory|src/EDA.R
