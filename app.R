@@ -16,7 +16,7 @@ crime_data <- read.csv('data//ucr_crime_1975_2015_Final_Clean.csv',stringsAsFact
 ui <- fluidPage(
   # Application title
   titlePanel("CrimeBusters"),
-  tags$p("Simple filtering application focusing on USA crime statistics in local regions"),
+  tags$p("How safe has your locality been in the past ? Check it out your self."),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
