@@ -9,7 +9,7 @@ Another nice to have feature which we were suggested by our peers during the fee
 
 We had challenges implementing the hover feature mainly because we had everything prepared in the ``ggplot2`` package. We tried a couple of packages but after a valuable suggestion from Vincenzo we tried to wrap everything in the ``plotly``. We struggled a bit but eventually got the way we wanted our app to be. This is how the hover feature looks like :
 
-|    <center>Hover over Line plot</center>          | <center>Hover over Bar plot</center> |
+|    <center>Hover over Line plot </center>         | <center>Hover over Bar plot</center> |
 |-------------------------:|:-------------------------|
 ![](/figure/Hover_Image1.PNG)  |  ![](/figure/Hover_Image2.png)
 
