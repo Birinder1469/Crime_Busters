@@ -59,37 +59,37 @@ The app is highly user friendly and easy to use. <br> The Interface looks like t
 4. Count Measurement choice (Drop Down)
 5. Crime Type Selector (Check Box)
 
-![Usage](figure/CromeBusters_App.PNG)
+![Usage](../figure/CrimeBusters_App.PNG)
 
 ### Selection Options
 
 ##### 1. Year Slider
 
-![Year](figure/Year_Slider.PNG)
+![Year](../figure/Year_Slider.PNG)
 
 The Year Slider can be used to choose any range from 1975 to 2014 by sliding the knobs. Results will be displayed only for the chosen year range.
 
 ##### 2. State Selector
 
-![State_Selector](figure/State_Selector_1.PNG)
+![State_Selector](../figure/State_Selector_1.PNG)
 
 The State Selector can be used to choose the state for which we want to see the crime data. Users can chose out of the six states shown below. Note that this app cannot show data from all department within the selected state, subsequent selection of department is needed (see below).
 
 ##### 3. Department Selector
 
-![Dep_selector](figure/Dep_Selector.PNG)
+![Dep_selector](../figure/Dep_Selector.PNG)
 
 Users can chose out of 30 departments/jurisdictions and see the crime data for specific department within that state. The options for this selection will change according to the state selected above.
 
 ##### 4. Count Measurement choice
 
-![](figure/Count_Measure.PNG)
+![](../figure/Count_Measure.PNG)
 
 User can choose to see the data for either total number of crimes in the area or crimes per 100,000 residents of the area.
 
 ##### 5. Crime Type choice
 
-![](figure/Crime_type.PNG)
+![](../figure/Crime_type.PNG)
 
 User can select the crimes of interest out of the four crime types available. Selection of multiple crime types is allowed.
 
@@ -99,20 +99,20 @@ There are two outputs figures that would display data interactively according to
 
 ##### Time Trend Plot
 
-![](figure/Crime_Line_Plot.PNG)
+![](../figure/Crime_Line_Plot.PNG)
 
 The first plot shows the time trend data for the selected state, department and the year of interest. Different crimes are shown through different colorations as defined by the legend.
 
 ##### Proportion Plot
 
-![](figure/Usage1.PNG)
+![](../figure/Usage1.PNG)
 
 Users also get access to the bar charts showing the proportion of different crimes out of total crime incidents in that jurisdiction.
 This plots shows that there had been few incidents of homicides out of the total crime reported but much more assaults and robberies in this area. Police can take necessary steps accordingly.
 
 ##### Summarization Table
 
-![](figure/Table.PNG)
+![](../figure/Table.PNG)
 
 If the users are interested to see exact numbers, the summarization table shows  the calculated net changes (in counts and percentages) of incidents in the specific jurisdiction for the specified time interval, and the average annual change in that interval.
 

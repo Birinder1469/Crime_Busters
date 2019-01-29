@@ -32,4 +32,4 @@ Bob is a sheriff in the Chicago Police Department and He is tasked to create a n
 The landing page of the app will show two time plots. The first time plot will depict the change of total number of crimes over years. The second time plot depicts how the proportion of different crimes changed throughout the years. There will be a summary table displaying different change measures of crime rate in the time interval selected by the user. From the selection panel, users can specify the time interval (in unit of years) and the police jurisdiction in which to show the crime data for. Additionally, users can choose to view the data in total occurrences, or in occurrence per 100k population under the 'Count Measure' option. Lastly, users have the option to only view certain crime types in the selection panel. In the display panel, users can view the trends and patterns in different perspective by scrolling down through the app interface.
 
 
- ![](figure/crime_buster_app_sketch.jpg)
+ ![](../figure/crime_buster_app_sketch.jpg)
