@@ -11,6 +11,6 @@ We had challenges implementing the hover feature mainly because we had everythin
 
 |    Hover over Line plot          | Hover over Bar plot |
 |-------------------------:|:-------------------------|
-![](/figure/Hover_Image1.PNG)  |  ![](/figure/Hover_Image2.PNG)
+![](/figure/Hover_Image1.PNG)  |  ![](/figure/Hover_Image2.png)
 
 Now that we have our app working, if we had more time and the flexibility to work from scratch we would want to use the USA map in the app as well. We wish to have the interactive user map where hovering over each of the state shows us the data about the crime situation in the state.
