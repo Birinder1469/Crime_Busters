@@ -6,7 +6,7 @@ Access : The app can be assessed from the following link.
 The Shiny app shows the incidents reported in major jurisdictions in the 6 States of USA.
 
 This how the Interface looks like : <br>
-![App_Interface](figure/CrimeBusters_App.PNG)
+![App_Interface](/figure/CrimeBusters_App.PNG)
 
 For details about the Usage please refer to the Write up document.
 
