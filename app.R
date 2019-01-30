@@ -36,7 +36,7 @@ ui <- fluidPage(
                          label = "Select Crime Type(s)",
                          choiceNames = c("Assault", 'Homicide', 'Rape', 'Robbery'),
                          choiceValues = sort(unique(crime_data$crime_type)),
-                         selected = unique(crime_data$crime_type)[1])),
+                         selected = unique(crime_data$crime_type)[4])),
 
 
 
@@ -97,12 +97,12 @@ server <- function(input, output) {
                           sep = "")))+
       geom_line(size = 1.25)+
       geom_point(size = 2)+
-      labs(x = "Year",
-           y = "#Crimes",
+      labs(y = "#Crimes",
            title = "Number of crimes")+
       scale_color_manual(values = color_map)+
       theme_minimal()+
-      theme(legend.position = "none")
+      theme(axis.title.x=element_blank(),
+            legend.position = "none")
   })
   
   occurance_lineplotly <- reactive({
@@ -116,13 +116,15 @@ server <- function(input, output) {
                               "<BR>Crime Proportion:", round(count_ratio,3),
                               sep = "")))+
       geom_bar(stat = 'identity')+
-      labs(x = "Year",
-           y = "Proportion Of Crimes",
+      labs(y = "Proportion Of Crimes",
            title = "Proportion of crimes",
            fill = "Crime Type")+
       scale_fill_manual(values = color_map)+
+      ylim(0, 1)+
       theme_minimal()+
-      theme(axis.text.x = element_text(angle = 70, vjust = 0.5),
+      theme(panel.grid.major = element_blank(),
+            axis.title.x=element_blank(),
+            axis.text.x = element_text(angle = 70, vjust = 0.5),
             legend.position = "bottom")
   })
   
