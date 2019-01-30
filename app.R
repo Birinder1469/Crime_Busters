@@ -97,12 +97,7 @@ server <- function(input, output) {
                           sep = "")))+
       geom_line(size = 1.25)+
       geom_point(size = 2)+
-<<<<<<< HEAD
-      labs(x = "",
-           y = "#Crimes",
-=======
       labs(y = "#Crimes",
->>>>>>> e4dda2e0908131121dd98deba75447c200d55f35
            title = "Number of crimes")+
       scale_color_manual(values = color_map)+
       theme_minimal()+
@@ -121,12 +116,7 @@ server <- function(input, output) {
                               "<BR>Crime Proportion:", round(count_ratio,3),
                               sep = "")))+
       geom_bar(stat = 'identity')+
-<<<<<<< HEAD
-      labs(x = "",
-           y = "Proportion Of Crimes",
-=======
       labs(y = "Proportion Of Crimes",
->>>>>>> e4dda2e0908131121dd98deba75447c200d55f35
            title = "Proportion of crimes",
            fill = "Crime Type")+
       scale_fill_manual(values = color_map)+
