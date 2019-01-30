@@ -97,7 +97,7 @@ server <- function(input, output) {
                           sep = "")))+
       geom_line(size = 1.25)+
       geom_point(size = 2)+
-      labs(x = "Year",
+      labs(x = "",
            y = "#Crimes",
            title = "Number of crimes")+
       scale_color_manual(values = color_map)+
@@ -116,7 +116,7 @@ server <- function(input, output) {
                               "<BR>Crime Proportion:", round(count_ratio,3),
                               sep = "")))+
       geom_bar(stat = 'identity')+
-      labs(x = "Year",
+      labs(x = "",
            y = "Proportion Of Crimes",
            title = "Proportion of crimes",
            fill = "Crime Type")+
