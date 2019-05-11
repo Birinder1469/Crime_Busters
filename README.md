@@ -14,8 +14,3 @@ For any questions and suggestions please contact the app developers :
 
 Birinder Singh (birinder1469@gmail.com) <br>
 Sylvia Lee (sylvialee19@hotmail.com)
-
-Feedbacks given to other groups for Milestone #3:
-
-[Wine_viz](https://github.com/UBC-MDS/wine_viz_mkpv/issues/18) <br>
-[violent_crimes_usa](https://github.com/UBC-MDS/violent_crimes_usa/issues/13)
